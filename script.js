@@ -46,7 +46,7 @@ $(document).ready(function(){
         $("ul.contacts").append("<li><span class='contact'>" + newContact.firstName + " " + newContact.lastName + "</span></li>");
 
         //Click name to display address details
-        $(".contacts").click(function(){
+        $(".contact").last().click(function(){
             $("div#show-contact").show()
             $("div#show-contact h2").text(newContact.firstName)
             $("ul#addresses").text("")
@@ -65,45 +65,50 @@ $(document).ready(function(){
 
     //Add new address in input form
     $("span#add-address-input").click(function(){
-        $("div#new-addresses").append(
-            "<hr>"+
-            "<span class='btn btn-primary' id='del-address-input'>Remove Address</span>"+
-            "<div class='new-address'>"+
-                "<div class='form-group'>"+
-                    "<label for='street'>Street</label>"+
-                    "<input type='text' class='form-control street' placeholder='Sonia Lane'>"+
-                "</div>"+
-                "<div class='form-group'>"+
-                    "<label for='town'>Town</label>"+
-                    "<input type='text' class='form-control town' placeholder='Mtwapa'>"+
-                "</div>"+
-                "<div class='form-group'>"+
-                    "<label for='county'>County</label>"+
-                    "<input type='text' class='form-control county' placeholder='Kilifi'>"+
-                "</div>"+
-            "</div>"
-        )
-    })
-    // $("span#add-address-input").click(function(){
-    //     $("div#new-addresses").hide(
-    //         "<hr>"+
-    //         "<span class='btn btn-primary' id='del-address-input'>Remove Address</span>"+
-    //         "<div class='new-address'>"+
-    //             "<div class='form-group'>"+
-    //                 "<label for='street'>Street</label>"+
-    //                 "<input type='text' class='form-control street' placeholder='Sonia Lane'>"+
-    //             "</div>"+
-    //             "<div class='form-group'>"+
-    //                 "<label for='town'>Town</label>"+
-    //                 "<input type='text' class='form-control town' placeholder='Mtwapa'>"+
-    //             "</div>"+
-    //             "<div class='form-group'>"+
-    //                 "<label for='county'>County</label>"+
-    //                 "<input type='text' class='form-control county' placeholder='Kilifi'>"+
-    //             "</div>"+
-    //         "</div>"
-    //     )
-    // })
 
-})
+        var total_element = $(".new-address").length;
+
+        if(total_element <= 2){
+            var lastid = $(".new-address:last").attr("id");
+            var split_id = lastid.split("_");
+            var nextindex = Number(split_id[1])+1;
+            $("div#new-addresses").append(
+                `<div class='new-address' id='new-address_${nextindex}'>`+
+                    "<hr>"+
+                    "<span class='btn btn-primary' id='del-address-input' onclick='removeAddressForm()'>Remove Address</span>"+
+                    "<div class='form-group'>"+
+                        "<label for='street'>Street</label>"+
+                        "<input type='text' class='form-control street' placeholder='Sonia Lane'>"+
+                    "</div>"+
+                    "<div class='form-group'>"+
+                        "<label for='town'>Town</label>"+
+                        "<input type='text' class='form-control town' placeholder='Mtwapa'>"+
+                    "</div>"+
+                    "<div class='form-group'>"+
+                        "<label for='county'>County</label>"+
+                        "<input type='text' class='form-control county' placeholder='Kilifi'>"+
+                    "</div>"+
+                "</div>"
+            )
+        }else{
+            alert("I can only take three addresses!")
+        }
+    })    
+});
+
+
+//JavaScript
+
+//Function to remove address form input
+function removeAddressForm(){
+    var id = $(".new-address:last").attr("id");
+    var split_id = id.split("_");
+    var deleteindex = split_id[1];
+    var oldInput=("div.new-address_"+deleteindex)
+    console.log("div:",oldInput, "splitid:",split_id,"DelIndex",deleteindex)
+
+    $("div#new-address_"+ deleteindex).remove();
+}
+
+    
 
