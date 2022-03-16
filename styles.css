@@ -26,6 +26,7 @@ h1{
 .btn{
     background-color: #FFD365 !important;
     color: #019267 !important;
+    font-weight: bold;
 }
 
 .form-control{
