@@ -3,16 +3,23 @@ body{
     background-color:#FFD365;
     color: #FFD365 !important;
     font-weight: bold;
+    font-family:'Hubballi', cursive;
+    font-size: large;
 }
 
-.my-container{
-    background-color:#019267;
-    padding: 2em;
+hr{
+    background-color: #FFD365;
 }
 
 h1{
     text-align: center !important;
-    font-family: 'Times New Roman', Times, serif;
+    color: #019267;
+    font-family: 'Hurricane', cursive;
+}
+
+.my-container{
+    background-color:#019267;
+    padding: 1em 2em;
 }
 
 .btn{

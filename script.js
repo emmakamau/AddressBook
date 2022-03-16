@@ -52,7 +52,7 @@ $(document).ready(function(){
             $("ul#addresses").text("")
             newContact.addresses.forEach(function(address){
                 $("ul#addresses").append(
-                    "<li>"+address.street+" "+ address.town +" "+ address.county+"</li>"
+                    "<li>"+address.street+", "+ address.town +", "+ address.county+"</li>"
                 )
             })
         })
@@ -66,6 +66,8 @@ $(document).ready(function(){
     //Add new address in input form
     $("span#add-address-input").click(function(){
         $("div#new-addresses").append(
+            "<hr>"+
+            "<span class='btn btn-primary' id='del-address-input'>Remove Address</span>"+
             "<div class='new-address'>"+
                 "<div class='form-group'>"+
                     "<label for='street'>Street</label>"+
@@ -82,6 +84,26 @@ $(document).ready(function(){
             "</div>"
         )
     })
+    // $("span#add-address-input").click(function(){
+    //     $("div#new-addresses").hide(
+    //         "<hr>"+
+    //         "<span class='btn btn-primary' id='del-address-input'>Remove Address</span>"+
+    //         "<div class='new-address'>"+
+    //             "<div class='form-group'>"+
+    //                 "<label for='street'>Street</label>"+
+    //                 "<input type='text' class='form-control street' placeholder='Sonia Lane'>"+
+    //             "</div>"+
+    //             "<div class='form-group'>"+
+    //                 "<label for='town'>Town</label>"+
+    //                 "<input type='text' class='form-control town' placeholder='Mtwapa'>"+
+    //             "</div>"+
+    //             "<div class='form-group'>"+
+    //                 "<label for='county'>County</label>"+
+    //                 "<input type='text' class='form-control county' placeholder='Kilifi'>"+
+    //             "</div>"+
+    //         "</div>"
+    //     )
+    // })
 
 })
 
