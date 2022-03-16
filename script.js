@@ -8,10 +8,10 @@ function myContact(fName,lName){
 
 //Adress constructor
 
-function adresses(street,city,state){
+function adresses(street,town,county){
     this.street = street
-    this.city = city
-    this.state = state
+    this.town = town
+    this.county = county
 }
 
 //JQuery
@@ -38,18 +38,32 @@ $(document).ready(function(){
                     alert("Form inputs cannot be empty!")
                 }
             })
-            $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
-        
-            $("input#fname").val("")
-            $("input#lname").val("")
-            $("input.street").val("")
-            $("input.town").val("")
-            $("input.county").val("")
         }else{
             alert("Forrm inputs cannot be empty!")
-        }   
+        }
+        
+        console.log(newContact)
+        $("ul.contacts").append("<li><span class='contact'>" + newContact.firstName + " " + newContact.lastName + "</span></li>");
+
+        //Click name to display address details
+        $(".contacts").click(function(){
+            $("div#show-contact").show()
+            $("div#show-contact h2").text(newContact.firstName)
+            $("ul#addresses").text("")
+            newContact.addresses.forEach(function(address){
+                $("ul#addresses").append(
+                    "<li>"+address.street+" "+ address.town +" "+ address.county+"</li>"
+                )
+            })
+        })
+        $("input#fname").val("")
+        $("input#lname").val("")
+        $("input.street").val("")
+        $("input.town").val("")
+        $("input.county").val("")
     }) 
-    //Add new address input form
+
+    //Add new address in input form
     $("span#add-address-input").click(function(){
         $("div#new-addresses").append(
             "<div class='new-address'>"+
@@ -68,5 +82,6 @@ $(document).ready(function(){
             "</div>"
         )
     })
+
 })
 

@@ -14,42 +14,52 @@
 </head>
 
 <body>
-    <h1>Address Book</h1><br>
-    <div class="row">
-        <div class="col-md-6">
-            <form class="address-form" id="address-form">
-                <h2>Add a contact:</h2>
-                <div class="form-group">
-                    <label for="fname">First Name</label>
-                    <input type="text" class="form-control" id="fname" placeholder="John">
-                </div>
-                <div class="form-group">
-                    <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" id="lname" placeholder="Doe">
-                </div>
-                <div id="new-addresses">
-                    <div class="new-address">
-                        <div class="form-group">
-                            <label for="street">Street</label>
-                            <input type="text" class="form-control street" placeholder="Sonia Lane">
-                        </div>
-                        <div class="form-group">
-                            <label for="town">Town</label>
-                            <input type="text" class="form-control town" placeholder="Mtwapa">
-                        </div>
-                        <div class="form-group">
-                            <label for="county">County</label>
-                            <input type="text" class="form-control county" placeholder="Kilifi">
+    <nav class="navbar">
+        <h1>My Address Book</h1>
+    </nav>
+    <br>
+    <div class="my-container">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="address-form" id="address-form">
+                    <h2>Add a contact:</h2>
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Doe">
+                    </div>
+                    <div id="new-addresses">
+                        <div class="new-address">
+                            <div class="form-group">
+                                <label for="street">Street</label>
+                                <input type="text" class="form-control street" placeholder="Sonia Lane">
+                            </div>
+                            <div class="form-group">
+                                <label for="town">Town</label>
+                                <input type="text" class="form-control town" placeholder="Mtwapa">
+                            </div>
+                            <div class="form-group">
+                                <label for="county">County</label>
+                                <input type="text" class="form-control county" placeholder="Kilifi">
+                            </div>
                         </div>
                     </div>
+                    <span class="btn btn-primary" id="add-address-input">Another Address</span>
+                    <button type="submit" class="btn btn-primary">Add Contact</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Show Contacts:</h2>
+                <ul class="contacts"></ul>
+                <div id="show-contact">
+                    <h2></h2>
+                    <p>Addresses:</p>
+                    <ul id="addresses"></ul>
                 </div>
-                <span class="btn btn-primary" id="add-address-input">Another Address</span>
-                <button type="submit" class="btn btn-primary">Add Contact</button>
-            </form>
-        </div>
-        <div class="col-md-6">
-            <h2>Show Contacts:</h2>
-            <ul id="contacts"></ul>
+            </div>
         </div>
     </div>
     <!-- Optional JavaScript -->

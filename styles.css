@@ -1,3 +1,42 @@
 body{
+    padding: 0 6em;
+    background-color:#FFD365;
+    color: #FFD365 !important;
+    font-weight: bold;
+}
+
+.my-container{
+    background-color:#019267;
     padding: 2em;
+}
+
+h1{
+    text-align: center !important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn{
+    background-color: #FFD365 !important;
+    color: #019267 !important;
+}
+
+.form-control{
+    background: transparent !important;
+    color: #FFD365 !important;
+    font-weight: bold;
+}
+
+.navbar{
+    background-color: #FFD365;
+    color: #019267;
+}
+
+#show-contact{
+    padding: 0 4em;
+    display: none;
+}
+
+.form-control::placeholder{
+    color: #FFD365;
+    font-weight: lighter;
 }
