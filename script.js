@@ -61,6 +61,8 @@ $(document).ready(function(){
         $("input.street").val("")
         $("input.town").val("")
         $("input.county").val("")
+        $("div#new-address_2").remove();
+        $("div#new-address_3").remove();
     }) 
 
     //Add new address in input form
@@ -93,7 +95,12 @@ $(document).ready(function(){
         }else{
             alert("I can only take three addresses!")
         }
-    })    
+    })
+
+    //Refresh page
+    $("span#refresh").click(function(){
+        document.querySelector("form").reset();
+    })
 });
 
 
@@ -105,8 +112,7 @@ function removeAddressForm(){
     var split_id = id.split("_");
     var deleteindex = split_id[1];
     var oldInput=("div.new-address_"+deleteindex)
-    console.log("div:",oldInput, "splitid:",split_id,"DelIndex",deleteindex)
-
+   
     $("div#new-address_"+ deleteindex).remove();
 }
 

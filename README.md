@@ -32,6 +32,8 @@ Click on **Add contact button** to add a contact to the list that displays on th
 
 Click on **Remove address button** to remove extra address form.
 
+Click on **Refresch button** to reload the form
+
 ## Contact
 Hit me up on emmaculatewkamau@gmail.com incase of any bugs.
 
